@@ -1,0 +1,33 @@
+<% include ../common/header.htm %>
+    <div class="panel panel-default">
+        <table width="100%" class="table">
+            <tr>
+                <th>作者</th>
+                <th>标题</th>
+                <th>内容</th>
+                <th>修改</th>
+            </tr>
+            <% list.forEach(function(item){ %>
+                <tr >
+                    <td>
+                        <%= item.author.name %>
+                    </td>
+                    <td>
+                        <a href='/blog/view/<%= item._id %>'>
+                            <%= item.title %>
+                        </a>
+                    </td>
+                    <td>
+                        <%= item.content %>
+                    </td>
+                    <!-- <td>
+                        <%= item._id %>
+                    </td> -->
+                    <td>
+                        <a href="/list/<%= item._id %>/editor/">编辑</a>
+                    </td>
+                </tr>
+                <% }) %>
+        </table>
+    </div>
+    <% include ../common/footer.htm %>
