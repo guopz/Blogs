@@ -82,9 +82,11 @@ module.exports.reg = {
 					resJson.msg = '注册成功！';
 					resJson.status = true;
 					resJson._id = data._id;
-					req.session.user = data._id;;
+					req.session.user = data;
 					// res.redirect('/user/'+ data._id);
-					res.send(resJson)
+					
+					res.send(resJson);
+
 				});
 
 			}
